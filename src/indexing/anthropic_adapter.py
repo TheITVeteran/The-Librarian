@@ -141,7 +141,7 @@ Extract only meaningful items. Skip trivial filler. Return valid JSON only."""
 
     # ─── Prediction ────────────────────────────────────────────────────────
 
-    PREDICTION_PROMPT = """You are The Librarian, an AI memory system.
+    PREDICTION_PROMPT = """You are The Librarian, a persistent memory system for Cowork.
 Given the recent conversation below, predict the 3 most likely topics
 the user will ask about or reference next. Return ONLY a JSON array
 of objects with "topic" and "confidence" (0-1) fields.

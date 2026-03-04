@@ -1,6 +1,43 @@
 # Release Notes — The Librarian
 
 If The Librarian was useful to you, please consider [buying me a drink](https://buymeacoffee.com/chief_librarian).
+
+## v1.3.0 — Scheduled Tasks & Automation (2026-03-04)
+
+Adds first-class scheduled task support, enabling automated maintenance
+and update monitoring without manual intervention.
+
+### New
+
+- **Daily health check** — Scheduled task that runs every morning at 9 AM PT.
+  Boots The Librarian, runs pulse/stats/maintain/window/topics/history, and
+  reports a concise health summary. Catches anomalies (zero entries, DB errors,
+  stale sessions) before they become problems.
+
+- **Weekly update check** — Scheduled task that runs every Friday at 10 AM PT.
+  Compares the local installed version against the latest GitHub release and
+  prompts the user to update if a newer version is available. Handles the
+  pull and file copy automatically if approved.
+
+### Infrastructure
+
+- Scheduled tasks use Cowork's new `create_scheduled_task` API with cron
+  expressions in local timezone (no UTC conversion needed).
+- Update check follows the existing development workflow: local workspace
+  stays unified with PRDicta/The-Librarian repo; personal data (rolodex.db)
+  is never pushed.
+
+---
+
+## v1.2.0 — Operations Block & Project Knowledge (2026-02-19)
+
+- Boot-injected operations block for session rules
+- Auto-maintain on boot
+- Project knowledge tier — project-scoped privileged context with 3x boost
+- Sync after every ingest
+
+---
+
 ## v1.1.0 — License Change (2026-02-16)
 
 **License: Dual-licensed under AGPL-3.0 + Commercial**

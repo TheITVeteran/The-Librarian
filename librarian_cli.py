@@ -4222,7 +4222,7 @@ def cmd_init(target_dir):
             " access_count, created_at, tier, metadata) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
             (
                 welcome_id, seed_session_id,
-                "The Librarian is a persistent memory system for AI conversations. "
+                "The Librarian is a persistent memory system for Cowork. "
                 "It stores every exchange in a local SQLite rolodex — user preferences, "
                 "project decisions, code patterns, and past discussions survive between sessions. "
                 "Use 'remember' to store facts about yourself, 'recall' to search past context, "
@@ -4240,7 +4240,7 @@ def cmd_init(target_dir):
             "INSERT INTO rolodex_fts (entry_id, content, tags, category) VALUES (?, ?, ?, ?)",
             (
                 welcome_id,
-                "The Librarian is a persistent memory system for AI conversations. "
+                "The Librarian is a persistent memory system for Cowork. "
                 "It stores every exchange in a local SQLite rolodex.",
                 "the librarian welcome getting started memory system",
                 "user_knowledge"
@@ -4426,7 +4426,7 @@ def cmd_install_gui():
     # ── Title ──
     tk.Label(root, text="The Librarian", font=(font_family, font_base + 10, "bold"),
              bg=bg).pack(pady=(25, 2))
-    tk.Label(root, text="Persistent Memory for AI Conversations",
+    tk.Label(root, text="Persistent Memory for Cowork",
              font=(font_family, font_base), fg="#666", bg=bg).pack(pady=(0, 20))
 
     # ── Workspace selection ──
